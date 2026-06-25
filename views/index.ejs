@@ -5,96 +5,381 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Primary SEO -->
   <title><%= restaurant.seo.title %></title>
   <meta name="description" content="<%= restaurant.seo.description %>">
   <meta name="keywords" content="<%= restaurant.seo.keywords %>">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="<%= restaurant.lang %>">
+
+  <!-- Canonical -->
+  <% if (restaurant.business && restaurant.business.website) { %>
+  <link rel="canonical" href="<%= restaurant.business.website %>">
+  <% } %>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="<%= restaurant.seo.title %>">
+  <meta property="og:description" content="<%= restaurant.seo.description %>">
+  <% if (restaurant.business && restaurant.business.website) { %>
+  <meta property="og:url" content="<%= restaurant.business.website %>">
+  <% } %>
+  <% if (restaurant.heroImages && restaurant.heroImages.length > 0) { %>
+  <meta property="og:image" content="<%= restaurant.heroImages[0] %>">
+  <% } %>
+  <meta property="og:locale" content="<%= restaurant.lang %>">
+  <meta property="og:site_name" content="<%= restaurant.name %>">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= restaurant.seo.title %>">
+  <meta name="twitter:description" content="<%= restaurant.seo.description %>">
+  <% if (restaurant.heroImages && restaurant.heroImages.length > 0) { %>
+  <meta name="twitter:image" content="<%= restaurant.heroImages[0] %>">
+  <% } %>
+
+  <!-- Geo -->
+  <% if (restaurant.googleMaps) { %>
+  <meta name="geo.position" content="<%= restaurant.googleMaps.latitude %>;<%= restaurant.googleMaps.longitude %>">
+  <meta name="geo.region" content="<%= restaurant.location.countryCode %>">
+  <meta name="geo.placename" content="<%= restaurant.location.fullAddressFr %>">
+  <% } %>
+
+  <!-- Structured Data -->
+  <% if (restaurant.restaurantSchema) { %>
+  <script type="application/ld+json">
+    <%- JSON.stringify(restaurant.restaurantSchema, null, 2) %>
+  </script>
+  <% } %>
 
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/sections.css">
 </head>
 
 <body>
 
-<header class="header">
-  <div class="logo"><%= restaurant.name %></div>
+<!-- ── Header ── -->
+<header class="header" role="banner">
+  <div class="logo" aria-label="<%= restaurant.name %>"><%= restaurant.name %></div>
 
-  <nav>
-    <a href="/">AR</a>
-    <a href="/fr">FR</a>
-    <a href="/en">EN</a>
+  <nav aria-label="language switcher">
+    <a href="/" lang="ar" hreflang="ar" aria-label="العربية">AR</a>
+    <a href="/fr" lang="fr" hreflang="fr" aria-label="Français">FR</a>
+    <a href="/en" lang="en" hreflang="en" aria-label="English">EN</a>
   </nav>
 </header>
 
-<section class="hero">
+<!-- ── Main Content ── -->
+<main id="main-content">
 
-  <div class="slides">
-    <% restaurant.heroImages.forEach((img, i) => { %>
-      <div class="slide <%= i === 0 ? 'active' : '' %>" style="background-image:url('<%= img %>')"></div>
-    <% }) %>
-  </div>
+  <!-- ── Hero ── -->
+  <section class="hero" aria-label="<%= restaurant.hero.title %>">
 
-  <div class="hero-content">
-    <h1><%= restaurant.hero.title %></h1>
-    <p><%= restaurant.hero.subtitle %></p>
-    <a href="#menu"><%= restaurant.hero.cta %></a>
-  </div>
-
-</section>
-
-<section id="menu">
-
-  <h2><%= restaurant.sections.featuredTitle %></h2>
-
-  <div class="grid">
-
-    <% restaurant.featuredDishes.forEach(dish => { %>
-
-      <div class="card">
-        <img src="<%= dish.image %>" alt="<%= dish.name %>">
-
-        <h3><%= dish.name %></h3>
-        <p><%= dish.description %></p>
-        <span><%= dish.price %></span>
-
-        <a href="<%= restaurant.links.whatsappBase %>?text=<%= encodeURIComponent(restaurant.messages.orderDishPrefix + ' ' + dish.name) %>">
-          <%= restaurant.buttons.order %>
-        </a>
-      </div>
-
-    <% }) %>
-
-  </div>
-
-</section>
-
-<section class="testimonials">
-
-  <h2><%= restaurant.sections.testimonialsTitle %></h2>
-
-  <% restaurant.testimonials.forEach(t => { %>
-    <div class="testimonial">
-      <strong><%= t.name %></strong>
-      <p><%= t.comment %></p>
-      <span><%= '★'.repeat(t.rating) %></span>
+    <div class="slides" aria-hidden="true">
+      <% restaurant.heroImages.forEach((img, i) => { %>
+        <div
+          class="slide <%= i === 0 ? 'active' : '' %>"
+          style="background-image:url('<%= img %>')"
+          role="img"
+          aria-label="<%= restaurant.name %> – <%= i + 1 %>"
+        ></div>
+      <% }) %>
     </div>
-  <% }) %>
 
-</section>
+    <button class="slider-btn prev" aria-label="السابق" type="button">&#8250;</button>
+    <button class="slider-btn next" aria-label="التالي" type="button">&#8249;</button>
 
-<section class="cta">
+    <div class="hero-content">
+      <h1><%= restaurant.hero.title %></h1>
+      <p><%= restaurant.hero.subtitle %></p>
+      <a href="#menu" aria-label="<%= restaurant.hero.cta %>"><%= restaurant.hero.cta %></a>
+    </div>
 
-  <h2><%= restaurant.cta.title %></h2>
-  <p><%= restaurant.cta.text %></p>
+  </section>
 
-  <a href="<%= restaurant.links.whatsappBase %>?text=<%= encodeURIComponent(restaurant.messages.whatsappGlobal) %>">
-    <%= restaurant.buttons.whatsapp %>
+  <!-- ── Featured Dishes ── -->
+  <section id="menu" aria-labelledby="menu-title">
+
+    <h2 id="menu-title"><%= restaurant.sections.featuredTitle %></h2>
+
+    <div class="grid">
+      <% restaurant.featuredDishes.forEach(dish => { %>
+        <article class="card reveal">
+
+          <img
+            src="<%= dish.image %>"
+            alt="<%= dish.nameAr || dish.name %>"
+            loading="lazy"
+            width="400"
+            height="300"
+          >
+
+          <h3><%= dish.nameAr || dish.name %></h3>
+          <p><%= dish.descriptionAr || dish.description %></p>
+          <span><%= dish.price %></span>
+
+          <a
+            href="<%= restaurant.links.whatsappBase %>?text=<%= encodeURIComponent(restaurant.messages.orderDishPrefix + ' ' + dish.name) %>"
+            aria-label="<%= restaurant.buttons.order %> <%= dish.nameAr || dish.name %>"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <%= restaurant.buttons.order %>
+          </a>
+
+        </article>
+      <% }) %>
+    </div>
+
+  </section>
+
+<section class="cta" aria-labelledby="jobs-title">
+
+  <h2 id="jobs-title"><%= restaurant.jobsSection.title %></h2>
+
+  <p><%= restaurant.jobsSection.description %></p>
+
+  <div class="grid" aria-label="المناصب المتاحة" style="margin-bottom:1.5rem">
+
+    <% restaurant.jobsSection.roles.forEach(role => { %>
+      <article class="card">
+        <h3><%= role.icon %> <%= role.title %></h3>
+        <p><%= role.description %></p>
+      </article>
+    <% }) %>
+
+  </div>
+
+  <a
+    href="https://wa.me/<%= restaurant.business.whatsapp %>?text=<%= encodeURIComponent(restaurant.jobsSection.whatsappText) %>"
+    aria-label="تواصل معنا عبر واتساب للعمل"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    💬 راسلنا على واتساب
   </a>
 
+  <% if (restaurant.business && restaurant.business.phone) { %>
+  <p style="margin-top:1rem">
+    <a
+      href="tel:<%= restaurant.business.phone %>"
+      aria-label="اتصل بنا للاستفسار عن العمل"
+    >
+      📞 أو اتصل بنا مباشرة: <%= restaurant.business.phone %>
+    </a>
+  </p>
+  <% } %>
+
 </section>
 
-<footer>
+
+
+
+
+
+  <!-- ── Services ── -->
+  <% if (restaurant.services && restaurant.services.length > 0) { %>
+  <section class="services" aria-labelledby="services-title">
+
+    <h2 id="services-title"><%= restaurant.sections.servicesTitle %></h2>
+
+    <ul class="services-grid" role="list">
+      <% restaurant.services.forEach(service => { %>
+        <li class="service-item reveal" aria-label="<%= service.label %>">
+          <span class="service-icon" aria-hidden="true"><%= service.icon %></span>
+          <span class="service-label"><%= service.label %></span>
+        </li>
+      <% }) %>
+    </ul>
+
+  </section>
+  <% } %>
+
+  <!-- ── Highlights ── 
+  <% if (restaurant.highlights && restaurant.highlights.length > 0) { %>
+  <section class="highlights" aria-labelledby="highlights-title">
+
+    <h2 id="highlights-title"><%= restaurant.sections.highlightsTitle %></h2>
+
+    <ul class="highlights-list" role="list">
+      <% restaurant.highlights.forEach(h => { %>
+        <li class="highlight-item reveal">
+          <span aria-hidden="true"><%= h.icon %></span>
+          <span><%= h.label %></span>
+        </li>
+      <% }) %>
+    </ul>
+
+  </section>
+  <% } %>
+
+  <!-- ── Testimonials ── -->
+  <section class="testimonials" aria-labelledby="testimonials-title">
+
+    <h2 id="testimonials-title"><%= restaurant.sections.testimonialsTitle %></h2>
+
+    <% restaurant.testimonials.forEach(t => { %>
+      <article class="testimonial reveal" aria-label="تقييم <%= t.name %>">
+        <strong><%= t.name %></strong>
+        <p><%= t.comment %></p>
+        <span aria-label="تقييم <%= t.rating %> من 5">
+          <%= '★'.repeat(t.rating) %><%= '☆'.repeat(5 - t.rating) %>
+        </span>
+      </article>
+    <% }) %>
+
+  </section>
+
+  <!-- ── Opening Hours & Contact ── -->
+  <section class="contact" aria-labelledby="contact-title">
+
+    <h2 id="contact-title">
+      <% if (restaurant.location) { %>
+        <%= restaurant.location.fullAddress %>
+      <% } %>
+    </h2>
+
+    <div class="contact-grid">
+
+      <% if (restaurant.openingHours) { %>
+      <div class="contact-block reveal">
+        <h3>⏰ <%= restaurant.openingHours.display %></h3>
+        <% if (restaurant.openingHours.note) { %>
+          <p><%= restaurant.openingHours.note %></p>
+        <% } %>
+      </div>
+      <% } %>
+
+      <div class="contact-block reveal">
+        <% if (restaurant.business && restaurant.business.phone) { %>
+          <a
+            href="<%= restaurant.links.phone %>"
+            class="contact-link"
+            aria-label="<%= restaurant.buttons.call %>"
+          >
+            📞 <%= restaurant.business.phone %>
+          </a>
+        <% } %>
+
+        <% if (restaurant.googleMaps && restaurant.googleMaps.directionsUrl) { %>
+          <a
+            href="<%= restaurant.googleMaps.directionsUrl %>"
+            class="contact-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="<%= restaurant.buttons.directions %>"
+          >
+            📍 <%= restaurant.buttons.directions %>
+          </a>
+        <% } %>
+      </div>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;border-radius:8px;">
+          <iframe src="https://maps.google.com/maps?q=33.123934%2C-7.624688&t=m&z=16&ie=UTF8&iwloc=B&output=embed" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <% if (restaurant.nearbyLandmarks && restaurant.nearbyLandmarks.length > 0) { %>
+      <div class="contact-block reveal">
+        <h3><%= restaurant.sections.nearbyTitle %></h3>
+        <ul class="nearby-list" role="list">
+          <% restaurant.nearbyLandmarks.forEach(lm => { %>
+            <li><%= lm.name %></li>
+          <% }) %>
+        </ul>
+      </div>
+      <% } %>
+
+    </div>
+
+  </section>
+
+  <!-- ── FAQ ── -->
+  <% if (restaurant.faq && restaurant.faq.length > 0) { %>
+  <section class="faq" aria-labelledby="faq-title">
+
+    <h2 id="faq-title"><%= restaurant.sections.faqTitle %></h2>
+
+    <dl class="faq-list">
+      <% restaurant.faq.forEach((item, i) => { %>
+        <div class="faq-item reveal">
+          <dt id="faq-q-<%= i %>"><%= item.question %></dt>
+          <dd><%= item.answer %></dd>
+        </div>
+      <% }) %>
+    </dl>
+
+  </section>
+  <% } %>
+
+  <!-- ── WhatsApp CTA ── -->
+  <section class="cta" aria-labelledby="cta-title">
+
+    <h2 id="cta-title"><%= restaurant.cta.title %></h2>
+    <p><%= restaurant.cta.text %></p>
+
+    <a
+      href="<%= restaurant.links.whatsappBase %>?text=<%= encodeURIComponent(restaurant.messages.whatsappGlobal) %>"
+      aria-label="<%= restaurant.buttons.whatsapp %>"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      💬 <%= restaurant.buttons.whatsapp %>
+    </a>
+
+  </section>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer role="contentinfo">
+
   <p><%= restaurant.footer.copy %></p>
+
+  <% if (restaurant.socialLinks) { %>
+  <nav class="footer-social" aria-label="روابط التواصل الاجتماعي">
+    <% if (restaurant.socialLinks.whatsapp) { %>
+      <a
+        href="<%= restaurant.socialLinks.whatsapp %>"
+        aria-label="واتساب"
+        target="_blank"
+        rel="noopener noreferrer"
+      >💬</a>
+    <% } %>
+    <% if (restaurant.socialLinks.facebook) { %>
+      <a
+        href="<%= restaurant.socialLinks.facebook %>"
+        aria-label="فيسبوك"
+        target="_blank"
+        rel="noopener noreferrer"
+      >📘</a>
+    <% } %>
+    <% if (restaurant.socialLinks.instagram) { %>
+      <a
+        href="<%= restaurant.socialLinks.instagram %>"
+        aria-label="إنستغرام"
+        target="_blank"
+        rel="noopener noreferrer"
+      >📷</a>
+    <% } %>
+    <% if (restaurant.socialLinks.googleMaps) { %>
+      <a
+        href="<%= restaurant.socialLinks.googleMaps %>"
+        aria-label="خرائط جوجل"
+        target="_blank"
+        rel="noopener noreferrer"
+      >📍</a>
+    <% } %>
+  </nav>
+  <% } %>
+
+  <% if (restaurant.location) { %>
+    <address>
+      <%= restaurant.location.fullAddressFr %>
+    </address>
+  <% } %>
+
 </footer>
 
-</body>
 <script src="/js/animations.js"></script>
+
+</body>
 </html>
+

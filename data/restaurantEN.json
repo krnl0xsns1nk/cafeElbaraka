@@ -1,0 +1,208 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+
+  "name": "Café, Restaurant and Grillade Al Baraka",
+  "nameAlternates": [
+    "Al Baraka",
+    "Al Baraka",
+    "Baraka Café",
+    "Al Baraka Restaurant Sidi El Aidi",
+    "Al Baraka Coffee",
+    "Al Baraka Grillade"
+  ],
+
+  "seo": {
+    "title": "Café, Restaurant and Grillade Al Baraka | Sidi El Aidi – Settat",
+    "titleVariants": [
+      "Café, Restaurant and Grillade Al Baraka | Moroccan Tajines, Grillades and Breakfast – Sidi El Aidi",
+      "Best Restaurant in Sidi El Aidi – Al Baraka Restaurant | Tajine, Couscous, Grillades",
+      "Al Baraka Restaurant | Moroccan Tea, Tajines and Couscous – Settat",
+      "Moroccan Breakfast and Traditional Dishes | Café and Grillade Al Baraka Sidi El Aidi",
+      "Restaurant Marocain Al Baraka | Sidi El Aidi – Settat",
+      "Café Restaurant Grillade Al Baraka | Petit-déjeuner, Tajine, Grillades – Settat",
+      "Al Baraka Grillade Sidi El Aidi | Grillades, Tajines and Family Meals"
+    ],
+    "description": "Café, Restaurant and Grillade Al Baraka in Sidi El Aidi – Settat. We offer Moroccan breakfast, mint tea, tajines, couscous and fresh grillades. Family atmosphere and friendly service. Order via WhatsApp.",
+    "descriptionVariants": [
+      "Al Baraka Restaurant in Sidi El Aidi serves the tastiest authentic Moroccan dishes: tajines, couscous, grillades and delicious morning breakfast. Coffee and tea in a calm and comfortable atmosphere.",
+      "Café Restaurant Al Baraka à Sidi El Aidi, Settat. Moroccan breakfast, mint tea, tajines, couscous and fresh grillades. Family ambiance. Order on WhatsApp.",
+      "Family restaurant in Sidi El Aidi: slow-cooked tajines, royal couscous, kebabs and grillades, Moroccan coffee and mint tea. Traditional homemade cuisine.",
+      "Al Baraka Café Sidi El Aidi: coffee, mint tea, breakfast, eggs, msemen, harira, tajines and grillades – all delicious and reasonably priced."
+    ],
+    "keywords": "restaurant Sidi El Aidi, café Sidi El Aidi, grillade Sidi El Aidi, Al Baraka restaurant, Al Baraka café, tajine Sidi El Aidi, restaurant marocain settat, café settat"
+  },
+
+  "business": {
+    "businessName": "Café, Restaurant and Grillade Al Baraka",
+    "primaryCategory": "Moroccan restaurant",
+    "secondaryCategories": [
+      "Café",
+      "Grillade",
+      "Breakfast",
+      "Family restaurant",
+      "Moroccan restaurant",
+      "Café",
+      "Grillade"
+    ],
+    "phone": "+212600123456",
+    "whatsapp": "+212600123456",
+    "website": "https://www.baraka-sidilaidi.ma",
+    "email": "",
+    "priceRange": "€",
+    "currency": "MAD",
+    "foundedYear": 2020,
+    "languages": ["en"]
+  },
+
+  "location": {
+    "address": "Sidi El Aidi",
+    "city": "Sidi El Aidi",
+    "region": "Settat",
+    "province": "Settat",
+    "country": "Morocco",
+    "countryCode": "MA",
+    "fullAddress": "Sidi El Aidi, Settat, Morocco"
+  },
+
+  "googleMaps": {
+    "latitude": 33.123934,
+    "longitude": -7.624688,
+    "embedUrl": "https://www.google.com/maps?q=33.123934,-7.624688",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=33.123934,-7.624688"
+  },
+
+  "openingHours": {
+    "display": "Open every day from 06:00 to 22:00",
+    "note": "Open 7 days a week including public holidays"
+  },
+
+  "hero": {
+    "title": "Authentic Moroccan Flavours",
+    "subtitle": "Delicious Moroccan food in a family atmosphere in Sidi El Aidi",
+    "cta": "View the menu"
+  },
+
+  "sections": {
+    "featuredTitle": "Signature Dishes",
+    "testimonialsTitle": "Customer Reviews",
+    "servicesTitle": "Our Services",
+    "faqTitle": "Frequently Asked Questions",
+    "nearbyTitle": "Nearby Areas"
+  },
+
+  "buttons": {
+    "order": "Order Now",
+    "viewAll": "View full menu",
+    "whatsapp": "WhatsApp",
+    "call": "Call us",
+    "directions": "How to get there"
+  },
+
+  "cta": {
+    "title": "Easy ordering via WhatsApp",
+    "text": "We are open from morning until night to welcome you"
+  },
+
+  "footer": {
+    "copy": "© 2026 Café, Restaurant and Grillade Al Baraka – Sidi El Aidi"
+  },
+
+  "links": {
+    "whatsappBase": "https://wa.me/212600123456",
+    "googleMaps": "https://www.google.com/maps?q=33.123934,-7.624688",
+    "phone": "tel:+212600123456"
+  },
+
+  "messages": {
+    "whatsappGlobal": "Hello, I would like to order from Al Baraka restaurant",
+    "orderDishPrefix": "I would like to order"
+  },
+
+  "heroImages": [
+    "https://dummyimage.com/1200x600/ddd/000&text=1",
+    "https://dummyimage.com/1200x600/ddd/000&text=2",
+    "https://dummyimage.com/1200x600/ddd/000&text=3"
+  ],
+
+  "featuredDishes": [
+    {
+      "id": 1,
+      "name": "Chicken Tajine with Lemon",
+      "description": "Tender chicken with olives and lemon in a traditional recipe",
+      "price": "85 MAD",
+      "image": "https://dummyimage.com/400x300/ddd/000&text=1"
+    },
+    {
+      "id": 2,
+      "name": "Royal Couscous",
+      "description": "Moroccan couscous with vegetables and meat",
+      "price": "110 MAD",
+      "image": "https://dummyimage.com/400x300/ddd/000&text=2"
+    },
+    {
+      "id": 3,
+      "name": "Mixed Grillades",
+      "description": "Delicious kefta and grilled meat",
+      "price": "70 MAD",
+      "image": "https://dummyimage.com/400x300/ddd/000&text=3"
+    },
+    {
+      "id": 4,
+      "name": "Moroccan Breakfast",
+      "description": "Msemen, beghrir and mint tea",
+      "price": "35 MAD",
+      "image": "https://dummyimage.com/400x300/ddd/000&text=4"
+    }
+  ],
+
+  "testimonials": [
+    { "name": "Youssef", "rating": 5, "comment": "Delicious food and great service" },
+    { "name": "Sara", "rating": 5, "comment": "A peaceful restaurant with delicious tajine" },
+    { "name": "Khalid", "rating": 5, "comment": "Very delicious breakfast" },
+    { "name": "Fatima", "rating": 5, "comment": "Fast service and reasonable prices" }
+  ],
+
+  "services": [
+    { "icon": "🍽️", "label": "Table service" },
+    { "icon": "💬", "label": "Order via WhatsApp" },
+    { "icon": "☀️", "label": "Morning breakfast" },
+    { "icon": "👨‍👩‍👧‍👦", "label": "Family tables" },
+    { "icon": "🍵", "label": "Tea and coffee" },
+    { "icon": "🔥", "label": "Daily grillades" },
+    { "icon": "🫕", "label": "Traditional tajines" },
+    { "icon": "🤝", "label": "Groups welcome" }
+  ],
+
+  "nearbyLandmarks": [
+    { "name": "Sidi El Aidi commune" },
+    { "name": "Sidi El Aidi market" },
+    { "name": "Sidi El Aidi center" },
+    { "name": "National Road Settat" },
+    { "name": "City of Settat" }
+  ],
+  "jobsSection": {
+    "title": "Join our team",
+    "description": "We are looking for people who want to work with us in the café – morning or evening shifts, with or without experience. What matters to us is the enthusiasm and commitment to serving customers well.",
+
+    "roles": [
+      {
+        "icon": "🫖",
+        "title": "Service and tables",
+        "description": "Welcome customers and serve tea, coffee and meals with a smile."
+      },
+      {
+        "icon": "🍳",
+        "title": "Kitchen assistant",
+        "description": "Preparation and serving – no diploma required, just the willingness to learn."
+      },
+      {
+        "icon": "🧹",
+        "title": "Cleaning and organisation",
+        "description": "Keep the premises clean – an essential and highly valued service."
+      }
+    ],
+
+    "whatsappText": "Hello, I would like to work with you at the café"
+  }
+}

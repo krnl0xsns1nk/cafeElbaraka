@@ -4,7 +4,8 @@
 
   /* ── Hero Slider ── */
   const slides = document.querySelectorAll(".slide");
-  let current = 0, timer;
+  let current = 0,
+    timer;
 
   function goTo(index) {
     slides[current].classList.remove("active");
@@ -12,8 +13,12 @@
     slides[current].classList.add("active");
   }
 
-  function next() { goTo(current + 1); }
-  function prev() { goTo(current - 1); }
+  function next() {
+    goTo(current + 1);
+  }
+  function prev() {
+    goTo(current - 1);
+  }
 
   function startAuto() {
     clearInterval(timer);
@@ -36,18 +41,29 @@
     hero.appendChild(btnPrev);
     hero.appendChild(btnNext);
 
-    btnPrev.addEventListener("click", function () { prev(); startAuto(); });
-    btnNext.addEventListener("click", function () { next(); startAuto(); });
+    btnPrev.addEventListener("click", function () {
+      prev();
+      startAuto();
+    });
+    btnNext.addEventListener("click", function () {
+      next();
+      startAuto();
+    });
 
     startAuto();
   }
 
   /* ── Scroll Reveal ── */
+  //const revealEls = document.querySelectorAll(
+  //  ".card, .testimonial, .hero-content, .cta, section h2"
+  //  );
   const revealEls = document.querySelectorAll(
-    ".card, .testimonial, .hero-content, .cta, section h2"
+    ".card, .testimonial, .hero-content, .cta, section h2, .service-item, .highlight-item, .contact-block, .faq-item",
   );
 
-  revealEls.forEach(function (el) { el.classList.add("reveal"); });
+  revealEls.forEach(function (el) {
+    el.classList.add("reveal");
+  });
 
   const observer = new IntersectionObserver(
     function (entries) {
@@ -58,9 +74,10 @@
         }
       });
     },
-    { threshold: 0.12 }
+    { threshold: 0.12 },
   );
 
-  revealEls.forEach(function (el) { observer.observe(el); });
+  revealEls.forEach(function (el) {
+    observer.observe(el);
+  });
 })();
-

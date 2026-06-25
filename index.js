@@ -13,17 +13,17 @@ app.use(express.static(path.join(__dirname, "public")));
 const restaurantAR = require("./data/restaurant.json");
 
 // If you later add FR/EN, you can duplicate like this:
-// const restaurantFR = require("./data/restaurantFR.json");
-// const restaurantEN = require("./data/restaurantEN.json");
+const restaurantFR = require("./data/restaurantFR.json");
+const restaurantEN = require("./data/restaurantEN.json");
 
 app.get("/", (req, res) => {
   res.render("index", {
-    restaurant: restaurantAR
+    restaurant: restaurantAR,
   });
 });
 
-/*
-Future multilingual structure (optional):
+
+//Future multilingual structure (optional):
 
 app.get("/fr", (req, res) => {
   res.render("index", { restaurant: restaurantFR });
@@ -32,7 +32,7 @@ app.get("/fr", (req, res) => {
 app.get("/en", (req, res) => {
   res.render("index", { restaurant: restaurantEN });
 });
-*/
+
 
 // 404 fallback
 app.use((req, res) => {
