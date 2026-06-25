@@ -1,0 +1,239 @@
+{
+  "lang": "ar",
+  "dir": "rtl",
+
+  "name": "مقهى ومطعم البركة",
+
+  "seo": {
+    "title": "دار الأطلس | مأكولات ومشروبات مغربية أصيلة",
+    "description": "استمتع بأشهى الأطباق المغربية التقليدية، الطواجين، المشاوي، الفطور المغربي، الشاي بالنعناع والقهوة في أجواء عائلية مريحة.",
+    "keywords": "مطعم مغربي, طاجين, كسكس, شاي بالنعناع, فطور مغربي, مشاوي"
+  },
+
+  "hero": {
+    "title": "وجبات مغربية أصيلة",
+    "subtitle": "أطباق تقليدية محضرة بعناية لتمنحك تجربة مغربية لا تنسى",
+    "cta": "استعرض قائمتنا"
+  },
+
+  "sections": {
+    "featuredTitle": "أشهر الأطباق",
+    "testimonialsTitle": "ماذا يقول زبائننا"
+  },
+
+  "buttons": {
+    "order": "اطلب الآن",
+    "viewAll": "عرض جميع الأطباق",
+    "whatsapp": "اطلب عبر واتساب"
+  },
+
+  "cta": {
+    "title": "جاهزون لتحضير طلبك",
+    "text": "اختر طبقك المفضل وأرسل طلبك بسهولة عبر واتساب."
+  },
+
+  "footer": {
+    "copy": "© 2026 مقهى ومطعم البركة | بواسطة سعد الدين"
+  },
+
+  "links": {
+    "whatsappBase": "https://wa.me/212648467058"
+  },
+
+  "messages": {
+    "whatsappGlobal": "السلام عليكم، أرغب في الطلب من قائمتكم.",
+    "orderDishPrefix": "السلام عليكم، أريد طلب"
+  },
+
+  "heroImages": [
+    "https://images.unsplash.com/photo-1555396273-367ea4eb4db5",
+    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+    "https://images.unsplash.com/photo-1414235077428-338989a2e8c0"
+  ],
+
+  "featuredDishes": [
+    {
+      "id": 1,
+      "name": "طاجين الدجاج بالليمون والزيتون",
+      "description": "دجاج طري مطهو ببطء مع الليمون المصبر والزيتون المغربي.",
+      "price": "65 درهم",
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947"
+    },
+    {
+      "id": 2,
+      "name": "طاجين اللحم بالبرقوق",
+      "description": "لحم طري مع البرقوق واللوز وصلصة مغربية غنية.",
+      "price": "85 درهم",
+      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+    },
+    {
+      "id": 3,
+      "name": "كسكس مغربي بالخضار",
+      "description": "كسكس تقليدي مع تشكيلة من الخضروات الطازجة.",
+      "price": "55 درهم",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd"
+    },
+    {
+      "id": 4,
+      "name": "مشاوي مشكلة",
+      "description": "تشكيلة من الكباب واللحم المشوي على الفحم.",
+      "price": "90 درهم",
+      "image": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd"
+    },
+    {
+      "id": 5,
+      "name": "طاجين الكفتة بالبيض",
+      "description": "كفتة متبلة مع البيض وصلصة الطماطم التقليدية.",
+      "price": "60 درهم",
+      "image": "https://images.unsplash.com/photo-1547592180-85f173990554"
+    },
+    {
+      "id": 6,
+      "name": "فطور مغربي متكامل",
+      "description": "مسمن، بغرير، جبن، زيت زيتون، عسل وشاي بالنعناع.",
+      "price": "45 درهم",
+      "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8"
+    }
+  ],
+
+  "allDishes": [
+    {
+      "id": 1,
+      "name": "طاجين الدجاج بالليمون والزيتون",
+      "description": "دجاج طري مطهو ببطء مع الليمون المصبر والزيتون المغربي.",
+      "price": "65 درهم",
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947"
+    },
+    {
+      "id": 2,
+      "name": "طاجين اللحم بالبرقوق",
+      "description": "لحم طري مع البرقوق واللوز.",
+      "price": "85 درهم",
+      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+    },
+    {
+      "id": 3,
+      "name": "طاجين الكفتة بالبيض",
+      "description": "كفتة متبلة مع البيض وصلصة الطماطم.",
+      "price": "60 درهم",
+      "image": "https://images.unsplash.com/photo-1547592180-85f173990554"
+    },
+    {
+      "id": 4,
+      "name": "كسكس مغربي بالخضار",
+      "description": "كسكس تقليدي مع خضروات موسمية.",
+      "price": "55 درهم",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd"
+    },
+    {
+      "id": 5,
+      "name": "كسكس ملكي",
+      "description": "كسكس مع الدجاج واللحم والخضروات.",
+      "price": "80 درهم",
+      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+    },
+    {
+      "id": 6,
+      "name": "حريرة مغربية",
+      "description": "شوربة مغربية غنية ومغذية.",
+      "price": "25 درهم",
+      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd"
+    },
+    {
+      "id": 7,
+      "name": "بيصارة",
+      "description": "طبق شعبي مغربي يقدم مع زيت الزيتون.",
+      "price": "20 درهم",
+      "image": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601"
+    },
+    {
+      "id": 8,
+      "name": "مشاوي مشكلة",
+      "description": "تشكيلة متنوعة من المشاوي.",
+      "price": "90 درهم",
+      "image": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd"
+    },
+    {
+      "id": 9,
+      "name": "كباب لحم",
+      "description": "كباب متبل ومشوي على الفحم.",
+      "price": "70 درهم",
+      "image": "https://images.unsplash.com/photo-1525755662778-989d0524087e"
+    },
+    {
+      "id": 10,
+      "name": "مسمن بالعسل",
+      "description": "فطيرة مغربية تقدم مع العسل.",
+      "price": "15 درهم",
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff"
+    },
+    {
+      "id": 11,
+      "name": "بغرير",
+      "description": "فطائر إسفنجية مغربية بالعسل والزبدة.",
+      "price": "15 درهم",
+      "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543"
+    },
+    {
+      "id": 12,
+      "name": "شباكية",
+      "description": "حلوى مغربية تقليدية.",
+      "price": "18 درهم",
+      "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b"
+    },
+    {
+      "id": 13,
+      "name": "شاي بالنعناع",
+      "description": "الشاي المغربي التقليدي بالنعناع الطازج.",
+      "price": "12 درهم",
+      "image": "https://images.unsplash.com/photo-1594631661960-ecf1134d0f8b"
+    },
+    {
+      "id": 14,
+      "name": "قهوة بالحليب",
+      "description": "قهوة عربية مع حليب طازج.",
+      "price": "14 درهم",
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
+    },
+    {
+      "id": 15,
+      "name": "عصير برتقال طازج",
+      "description": "عصير طبيعي محضر عند الطلب.",
+      "price": "18 درهم",
+      "image": "https://images.unsplash.com/photo-1600271886742-f049cd5bba3f"
+    }
+  ],
+
+  "testimonials": [
+    {
+      "name": "محمد ايت فلان",
+      "rating": 5,
+      "comment": "صارحة القهوة ناضية او كنصحكم بيها، الله يسر ليكم"
+    },
+    {
+      "name": "Fatima El",
+      "rating": 5,
+      "comment": "مناسب للوجبات العائلية، استقبال ومعاملة في المستوى"
+    },
+    {
+      "name": "khalid elflani",
+      "rating": 4,
+      "comment": "كل كل ما تشتيه"
+    },
+    {
+      "name": "Mohemal lmsmn",
+      "rating": 5,
+      "comment": "Nadi"
+    },
+    {
+      "name": "عبد الحق",
+      "rating": 5,
+      "comment": "trèe bien café"
+    },
+    {
+      "name": "mo3ad",
+      "rating": 4,
+      "comment": "التعامل بوحدوا كيخليك تدمن"
+    }
+  ]
+}
